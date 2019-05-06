@@ -4,9 +4,18 @@ public class AjouterElementService extends MenuService {
 
 	void executeUc(ElementDao ed) {
 		showText("Ajout d'un nouveau element");
-		
+		String[] typeLists;
 		// check empty typelist
+		if(ed.checkListTypeEmpty()) {
+			showText("Vous devez d'abord créer au moins un type d'élément");
+			return;
+		}
 		
+		showText("De quel type va être votre élément ? ");
+		typeLists = ed.getTypeList();
+		for(int i=0;i<typeLists.length;i++) {
+			showText(i + ". "+ed.getNameTypeFromString(typeLists[i]));
+		}
 		// ask for wich type
 		
 		// get type

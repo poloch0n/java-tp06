@@ -56,6 +56,26 @@ public class ElementDao {
 		}
 	}
 	
+	String getNameTypeFromString(String type) {
+	
+		String result = "";
+		int end = type.indexOf(",");
+		if (end != -1) 
+		{
+			result= type.substring(0 , end); //to check if it does apply delete
+		}
+		return result;
+	}
+	
+	String[] getParamTypeFromString(String type) {
+		String[] result = null;
+		int end = type.indexOf(",");
+		while(end != -1) {
+			
+		}
+		return result;
+	}
+	
 	String[] getList() {
 		return list;
 	}
