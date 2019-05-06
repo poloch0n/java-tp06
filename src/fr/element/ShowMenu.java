@@ -12,7 +12,7 @@ public class ShowMenu {
 	
 	public static void showMenuOptions() {
 		// todo update
-		showText("1. Lister les pizzas \r\n2. Ajouter une nouvelle pizza \r\n3. Mettre à jour une pizza \r\n4. Supprimer une pizza \r\n99. Sortir");
+		showText("1. Lister les elements \r\n2. Lister les types d'éléments \r\n3. Ajouter un élément \r\n4. Ajouter un type d'élément \r\n5. Modifier un élément \r\n6. Modifier un type d'élément\r\n7. Supprimer un élément \r\n8. Supprimer un type d'élément \r\n99. Sortir");
 	}	
 	
 	public static void showText(String texte) {

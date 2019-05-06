@@ -9,7 +9,9 @@ class MenuServiceFactory {
 	public MenuService run(Integer answer) {
 		switch(answer) {
 		case 1:
-			return null;
+			return new ListerElementService();
+		case 2:
+			return new ListerTypeElementService();
 		case 99:
 			return new ExitService();
 		default:
