@@ -8,13 +8,13 @@ public class ListerElementService extends MenuService{
 			return;
 		}
 		showText("Liste des elements");
-		
-		for(String ligne: ed.getList()) {
+		String[] lists = ed.getList();
+		for(int i =0; lists.length>i ; i++) {
 			// todo : 
 				// v0 déparser
 				// v1 Afficher une phrase en fonction du type
-			String text = ligne;
-			showText(text);
+
+			showText(i+"- "+lists[i]);
 		}
 	}
 

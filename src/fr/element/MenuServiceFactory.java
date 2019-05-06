@@ -12,6 +12,8 @@ class MenuServiceFactory {
 			return new ListerElementService();
 		case 2:
 			return new ListerTypeElementService();
+		case 3:
+			return new AjouterElementService();
 		case 4:
 			return new AjouterListTypeService();
 		case 99:

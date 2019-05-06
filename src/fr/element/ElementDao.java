@@ -11,7 +11,23 @@ public class ElementDao {
 		// TODO Auto-generated constructor stub
 	}
 
-	public void saveNewListTypeElement(String ListType) {
+	public void saveNewElement(String element) {
+		String[] listTemporary;
+		if(typeList != null) {
+			listTemporary = new String[typeList.length + 1];
+			if(typeList.length != 0) {
+				for (int i = 0; i < typeList.length; i++) {
+					listTemporary[i] = typeList[i];
+				}
+			}
+			listTemporary[typeList.length] = element;
+		} else {
+			listTemporary = new String[1];
+			listTemporary[0] = element;
+		}
+		list = listTemporary;
+	}
+	public void saveNewListTypeElement(String listType) {
 		// supposed ListTypeclean, and unique
 		String[] typelistTemporary;
 		if(typeList != null) {
@@ -21,10 +37,10 @@ public class ElementDao {
 					typelistTemporary[i] = typeList[i];
 				}
 			}
-			typelistTemporary[typeList.length] = ListType;
+			typelistTemporary[typeList.length] = listType;
 		} else {
 			typelistTemporary = new String[1];
-			typelistTemporary[0] = ListType;
+			typelistTemporary[0] = listType;
 		}
 		typeList = typelistTemporary;
 	}
@@ -67,13 +83,33 @@ public class ElementDao {
 		return result;
 	}
 	
-	String[] getParamTypeFromString(String type) {
-		String[] result = null;
-		int end = type.indexOf(",");
-		while(end != -1) {
-			
+	public String[] increaseArray(String[] array, String element) {
+
+		String[] menuTemporary;
+		if(array != null) {
+			menuTemporary = new String[array.length + 1];
+			if(array.length != 0) {
+				for (int i = 0; i < array.length; i++) {
+					menuTemporary[i] = array[i];
+				}
+			}
+			menuTemporary[array.length] = element;
+		} else {
+			menuTemporary = new String[1];
+			menuTemporary[0] = element;
 		}
-		return result;
+		return menuTemporary;
+	}
+	
+	String[] getdataTypeFromTypeList(String typelist) {
+
+		String[] parts = typelist.split("\\,"); // String array, each element is text between virgules
+
+		return parts;
+	}
+	
+	String getNameType(String typelist){
+		return getdataTypeFromTypeList(typelist)[0];	
 	}
 	
 	String[] getList() {
