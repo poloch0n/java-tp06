@@ -12,6 +12,8 @@ class MenuServiceFactory {
 			return new ListerElementService();
 		case 2:
 			return new ListerTypeElementService();
+		case 4:
+			return new AjouterListTypeService();
 		case 99:
 			return new ExitService();
 		default:

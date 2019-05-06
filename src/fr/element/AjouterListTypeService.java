@@ -1,6 +1,6 @@
 package fr.element;
 
-public class AjouterListType extends MenuService{
+public class AjouterListTypeService extends MenuService{
 
 	void executeUc(ElementDao ed) {
 		showText("Ajout d'un nouveau type");
@@ -12,11 +12,14 @@ public class AjouterListType extends MenuService{
 		// formater le retour
 			// "{nomType,param1,param2,param3}";
 		// vérifier unicité du nom
+
+		String message = ed.checkListType(listType);
 		if(!message.equals("")) {
 			showText(message);
-			executeUc(dao);
+			executeUc(ed);
 			return;
 		}
-		ed.saveNewListType(listType);
+		showText(listType);
+		ed.saveNewListTypeElement(listType);
 	}
 }

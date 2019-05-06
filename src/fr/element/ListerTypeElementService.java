@@ -9,7 +9,7 @@ public class ListerTypeElementService extends MenuService{
 			}
 			showText("Liste des types d'éléments");
 			
-			for(String ligne: ed.getList()) {
+			for(String ligne: ed.getTypeList()) {
 				// todo : 
 					// v0 déparser
 					// v1 Afficher une phrase en fonction du type
